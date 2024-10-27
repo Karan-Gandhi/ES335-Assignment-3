@@ -192,7 +192,7 @@ def main():
     st.write(f"Loading model from: {model_path}")
 
     stoi, itos = load_vocab(corpus)
-    print(stoi, itos)
+    # print(stoi, itos)
     hidden_dim = 256
 
     model = load_model(model_path, block_size, len(stoi) + 1, embedding_dim, hidden_dim, activation_fn)
@@ -201,6 +201,7 @@ def main():
     k = st.number_input("How many words to generate?", min_value=1, max_value=100, value=5)
 
     if st.button("Generate Next Words"):
+        print(corpus)
         if corpus == 'sherlock':
             context_words = input_text.split()
             generated_text = generate_sequence_sherlock(model, itos, stoi, context_words, block_size, max_len=k)
