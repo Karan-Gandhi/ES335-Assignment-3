@@ -144,7 +144,7 @@ def generate_sequence_c(model, itos, stoi, context_words, block_size, max_len=20
     return generated_code
 
 def main():
-    st.title("Next Word Prediction Streamlit App")
+    st.title("Next Word Prediction App")
 
     corpus = st.selectbox("Select Corpus", ["sherlock", "c", "lyrics"])
     block_size = st.selectbox("Select Block Size", [5, 10, 15])
